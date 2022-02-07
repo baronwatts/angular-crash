@@ -1,0 +1,10 @@
+<!-- taks array is defined in our component -->
+<!-- directives are defined in our html -->
+<!-- <p *ngFor="let task of tasks">{{task.text}}</p> -->
+<!-- define your functions in the task component .ts -->
+
+<!-- we can get access from the task through the $event -->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+
+<!-- we have access to the task from the ngFor -->
+<app-task-item *ngFor="let task of tasks" [task]="task" (onDeleteTask)="deleteTask(task)"  (onToggleReminder)="toggleReminder(task)"></app-task-item>
